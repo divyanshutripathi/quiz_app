@@ -77,7 +77,6 @@ export class QuizService {
         return {
           success: true,
           message: `Quiz deleted successfully`,
-          deletedQuiz: quiz,
           deletedResults: deletedResultsCount,
         }
       } catch (error) {

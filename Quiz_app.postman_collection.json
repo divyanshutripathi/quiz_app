@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "8f5280d0-13bf-4a66-b11f-b21e275c5ad1",
+		"name": "Quiz_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26968638"
+	},
+	"item": [
+		{
+			"name": "createQuiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"India\",\n    \"questions\" : [\n        {\n            \"text\" : \"What is the capital city of India?\",\n            \"options\": [\"Mumbai\", \"New Delhi\", \"Kolkata\", \"Bengaluru\"],\n            \"correct_option\": 2\n        },\n        {\n            \"text\" : \"Which Indian state is known as the Land of Festivals?\",\n            \"options\": [\"Kerala\", \"Punjab\", \"Assam\", \"Rajasthan\"],\n            \"correct_option\": 4\n        },\n        {\n            \"text\" : \"Who wrote the national anthem of India, Jana Gana Mana?\",\n            \"options\": [\"Rabindranath Tagore\", \"Bankim Chandra Chatterji\", \"Sarojini Naidu\", \"A.R. Rahman\"],\n            \"correct_option\": 1\n        },\n        {\n            \"text\" : \"Which Indian city is referred to as the Silicon Valley of India?\",\n            \"options\": [\"Hyderabad\", \"Pune\", \"Kolkata\", \"Bengaluru\"],\n            \"correct_option\": 4\n        },\n        {\n            \"text\" : \"What is the national flower of India?\",\n            \"options\": [\"Rose\", \"Lotus\", \"Sunflower\", \"Jasmine\"],\n            \"correct_option\": 2\n        },\n        {\n            \"text\" : \"Which Indian festival is known as the Festival of Lights?\",\n            \"options\": [\"Holi\", \"Diwali\", \"Christmas\", \"Eid\"],\n            \"correct_option\": 2\n        },\n        {\n            \"text\" : \"Which state in India has the largest population?\",\n            \"options\": [\"Maharashtra\", \"Uttar Pradesh\", \"Bihar\", \"West Bengal\"],\n            \"correct_option\": 2\n        },\n        {\n            \"text\" : \"What is the national animal of India?\",\n            \"options\": [\"Tiger\", \"Lion\", \"Elephant\", \"Peacock\"],\n            \"correct_option\": 1\n        },\n        {\n            \"text\" : \"Which mountain range separates India from Tibet?\",\n            \"options\": [\"Western Ghats\", \"Eastern Ghats\", \"Himalayas\", \"Aravalli Range\"],\n            \"correct_option\": 3\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/quiz/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getQuiz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/quiz/039505ef-9056-4f49-9244-575210c5184b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						"039505ef-9056-4f49-9244-575210c5184b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit_quiz",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"answers\": [\n        {\n            \"questionId\": \"970a55f6-5098-4ed0-aae1-8a85a9593c66\",\n            \"selectedOption\": 2\n        },\n        {\n            \"questionId\": \"b1b79410-8eb7-4b0b-8d47-d9fc82c5eb50\",\n            \"selectedOption\": 2\n        },\n        {\n            \"questionId\": \"81399651-112a-491e-8c12-2ae2a439c8e8\",\n            \"selectedOption\": 2\n        },\n        {\n            \"questionId\": \"d3baf642-57d6-4627-8d58-f89e6e5a2446\",\n            \"selectedOption\": 2\n        },\n        {\n            \"questionId\": \"33380364-b62f-4331-b3ca-aa90b47e8de7\",\n            \"selectedOption\": 2\n        },\n        {\n            \"questionId\": \"3ee8a8f3-9092-43b5-9b2c-d3ebcf32fa03\",\n            \"selectedOption\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/quiz/8e949f91-8135-4162-871b-9d6bdd077fd0/submit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						"8e949f91-8135-4162-871b-9d6bdd077fd0",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "results",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userId",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/quiz/039505ef-9056-4f49-9244-575210c5184b/results/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						"039505ef-9056-4f49-9244-575210c5184b",
+						"results",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit_answer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"selected_option\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/quiz/039505ef-9056-4f49-9244-575210c5184b/questions/4935f6c0-78a0-4d76-931f-fd5236022393/answer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						"039505ef-9056-4f49-9244-575210c5184b",
+						"questions",
+						"4935f6c0-78a0-4d76-931f-fd5236022393",
+						"answer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Quiz",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/quiz/162548dc-fd6d-4d56-8afb-532b3c983c67",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quiz",
+						"162548dc-fd6d-4d56-8afb-532b3c983c67"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

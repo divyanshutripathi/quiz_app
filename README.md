@@ -8,15 +8,44 @@ A RESTful API for managing quizzes built with NestJS and TypeScript.
 - Fetch quizzes without revealing correct answers
 - Submit answers and receive immediate feedback
 - Get quiz results and performance statistics
+- Delete quiz
 
-## Setup Instructions
+## Prerequisites
 
-1. Make sure you have Node.js and npm installed
-2. Clone the repository
-3. Install dependencies: `npm install`
-4. Start the server: `npm run start`
+- **Docker** and **Docker Compose** for running the project
+- **Node.js** and **npm** for local development (optional)
 
-The API will be available at `http://localhost:3000`
+## Getting Started
+
+### Running with Docker
+
+1. **Install Docker and Docker Compose:**
+
+   - Download and install Docker from [Docker](https://www.docker.com/get-started)
+   - Follow the instructions to install Docker Compose.
+
+2. **Clone the Repository:**
+
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
+
+3. **Start the Application**
+
+   ```bash
+   docker-compose up -d
+   ```
+
+The server will be accessible at `http://localhost:3000`.
+
+## API Documentation
+
+- `http://localhost:3000/api`
+
+## Postman Collection
+
+- File in root directory named. `Quiz_app.postman_collection.json`
 
 ## API Endpoints
 
@@ -24,6 +53,7 @@ The API will be available at `http://localhost:3000`
 - GET /quiz/:id - Get quiz by ID
 - POST /quiz/:quizId/questions/:questionId/answer - Submit an answer
 - GET /quiz/:quizId/results/:userId - Get quiz results
+- DELETE /quiz/:quizId - Delete quiz
 
 ## Technical Decisions
 
